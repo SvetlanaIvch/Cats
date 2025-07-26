@@ -1,7 +1,22 @@
+from http.client import responses
 from tkinter import *
 from PIL import Image, ImageTk
 import requests
 from io import BytesIO
+
+
+def loade_image():
+    try:
+        response = reguests.get(url)
+        response.raise_for_status()
+        image_data = BytesIO(response.content)
+        img = Image.open(image_data)
+        return ImageTk.fptoimege(img)
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+        return None
+
+
 
 window = Tk
 window.title("Cats!")
