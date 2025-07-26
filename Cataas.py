@@ -30,7 +30,8 @@ window.geometry("600x480")
 label = Label(window)
 label.pack()
 
-update_button = Button(text="Обновить?", command=set_image)
+update_button = Button(window, text="Обновить", command=set_image)
+update_button.pack()
 
 url = "https://cataas.com/cat"
 
